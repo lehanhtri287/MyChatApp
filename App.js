@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react';
 import {
     Platform,
@@ -15,3 +16,4 @@ const appNavigator = StackNavigator({
     register: {screen: RegisterScreen}
 })
 export default appNavigator;
+
