@@ -12,24 +12,19 @@ import {
 export default class LoginScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            hidden: true
-        }
     }
-
-    static navigationOptions = {
-        title: 'Snapping Chat',
-        headerStyle: {
-            backgroundColor: '#6200EE'
-        }
-    }
+    //
+    // static navigationOptions = {
+    //     title: 'Snapping Chat',
+    //     headerStyle: {
+    //         backgroundColor: '#6200EE'
+    //     }
+    // }
 
     render() {
         const {navigate} = this.props.navigation;
         return (
             <View style={style.container}>
-                <StatusBar hidden={this.state.hidden}/>
-
                 <View style={style.content}>
                     <View style={style.wrapper}>
                         <View style={style.formInput}>
@@ -45,6 +40,9 @@ export default class LoginScreen extends Component {
                         </View>
                         <View style={style.formInput}>
                             <TouchableOpacity
+                                onPress={()=>{
+                                    navigate('userInfo');
+                                }}
                                 style={style.button}>
                                 <Text style={style.textView}>Login</Text>
                             </TouchableOpacity>
@@ -52,7 +50,7 @@ export default class LoginScreen extends Component {
                                 onPress={() => {
                                     navigate('register');
                                 }}>
-                                <Text style={style.textView}>Not a member? Sign up now.</Text>
+                                <Text style={{color:'black', fontSize: 20}}>Not a member? Sign up now.</Text>
                             </TouchableOpacity>
                             {/*<Button*/}
                             {/*title="Not a member? Sign up now."*/}
@@ -76,7 +74,7 @@ var style = StyleSheet.create({
     header: {
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: "#6495ED",
+        backgroundColor: "grey",
         height: 50,
         shadowColor: 'grey',
         shadowOffset: {width: 0, height: 5},
@@ -85,7 +83,7 @@ var style = StyleSheet.create({
     },
     content: {
         flex: 1,
-        backgroundColor: "#FFB6C1",
+        backgroundColor: "white",
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -96,20 +94,20 @@ var style = StyleSheet.create({
     textView: {
         fontSize: 20,
         textAlign: 'center',
-        color: "#000000"
+        color: "#FFFFFF"
     },
     input: {
         margin: 5,
         borderRadius: 20,
         // caretHidden: true,
-        backgroundColor: "#FFFFFF",
+        backgroundColor: '#E0E0E0',
     },
     button: {
         margin: 10,
         padding: 10,
         marginRight: 30,
         marginLeft: 30,
-        backgroundColor: '#90EE90',
+        backgroundColor: 'skyblue',
         borderRadius: 20,
         alignItems: 'center'
     },

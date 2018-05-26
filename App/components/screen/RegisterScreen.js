@@ -12,22 +12,11 @@ import {
 export default class RegisterScreen extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            hidden: true
-        }
-    }
-
-    static navigationOptions = {
-        title: 'Snapping Chat',
-        headerStyle: {
-            backgroundColor: '#6200EE'
-        }
     }
 
     render() {
         return (
             <View style={style.container}>
-                <StatusBar hidden={this.state.hidden}/>
 
                 <View style={style.formInput}>
                     <TextInput
@@ -71,14 +60,14 @@ var style = StyleSheet.create({
     textView: {
         fontSize: 20,
         textAlign: 'center',
-        color: "#000000"
+        color: "#FFFFFF"
     },
     input: {
         margin: 5,
         marginLeft: 20,
         marginRight: 20,
         alignItems: 'center',
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "#E0E0E0",
         borderRadius: 20,
     },
     button: {
@@ -86,7 +75,7 @@ var style = StyleSheet.create({
         padding: 10,
         marginLeft: 90,
         marginRight: 90,
-        backgroundColor: '#90EE90',
+        backgroundColor: 'skyblue',
         borderRadius: 20,
         alignItems: 'center'
     },
@@ -104,7 +93,7 @@ var style = StyleSheet.create({
     },
     formInput: {
         flex: 1,
-        backgroundColor: "#FFB6C1",
+        backgroundColor: "white",
         justifyContent: 'center'
     }
 });
