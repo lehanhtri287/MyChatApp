@@ -57,5 +57,9 @@ buck-out/
 App/components/screen/.gitkeep
 App/components/elements/.gitkeep
 App/assets/images/.gitkeep
+<<<<<<< HEAD
 App/Router.js
+=======
+>>>>>>> 79398ca6961031bc0bd3acdda3a6bd9375ea3c77
 .vscode/launch.json
+package-lock.json
