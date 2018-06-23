@@ -58,5 +58,4 @@ App/components/screen/.gitkeep
 App/components/elements/.gitkeep
 App/assets/images/.gitkeep
 App/Router.js
-.eslintrc
 .vscode/launch.json

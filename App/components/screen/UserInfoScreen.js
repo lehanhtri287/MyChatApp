@@ -33,16 +33,10 @@ export default class UserInfoScreen extends Component {
                     <Text style={{color:'black', margin: 10}}>SDT: 1231231231</Text>
                     <Text style={{color:'black', margin: 10}}>Username: abc@example.com</Text>
                     <Text style={{color:'black', margin: 10}}>SDT: 1231231231</Text> */}
-                    <Card>
-                        <CardTitle>
-                            <Text style={{fontWeight: 'bold', fontSize: 25, color:'black'}}> User Name</Text>
-                        </CardTitle>
-                        <CardContent>
-                            <Text>Content 1</Text>
-                            <Text>Content 2</Text>
-                        </CardContent>
-                    </Card>
-
+                    <Text style={{fontWeight: 'bold', fontSize: 25, color:'black', margin:10}}> User Name</Text>
+                    <Text style={styleShow.cardContent}>Content 1</Text>
+                    <Text style={styleShow.cardContent}>Content 2</Text>
+                    
                 </View>
                 <View style={styleShow.footer}>
                     <TouchableOpacity
@@ -79,6 +73,7 @@ var styleShow = StyleSheet.create({
         alignItems:'center'
     },
     content:{
+        flex:1,
         justifyContent:'center', 
         alignItems:'center'
     },
@@ -102,4 +97,14 @@ var styleShow = StyleSheet.create({
         fontSize: 38,
         backgroundColor: 'transparent'
     },
+    cardContent: {
+        margin:5,
+        padding:10,
+        borderRadius: 10,
+        borderColor:'grey',
+        borderTopWidth:1,
+        borderLeftWidth:1,
+        borderRightWidth:1,
+        borderBottomWidth:1,
+    }
 })
