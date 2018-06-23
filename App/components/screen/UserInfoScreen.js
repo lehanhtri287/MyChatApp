@@ -6,9 +6,17 @@ import {
     Image,
     Text,
     ScrollView, 
-    TouchableOpacity
+    TouchableOpacity, Button
 }
-    from 'react-native';
+from 'react-native';
+
+import {
+    Card,
+    CardImage,
+    CardTitle, CardContent, CardAction
+} 
+from 'react-native-card-view';
+
 
 export default class UserInfoScreen extends Component {
     render() {
@@ -19,13 +27,22 @@ export default class UserInfoScreen extends Component {
                         borderRadius={50}
                         source={require('../../assets/images/icon-user.png')}
                         style={styleShow.imageStyle}/>
-                    <Text style={{fontWeight: 'bold', fontSize: 25, color:'black'}}> User Name</Text>
                 </View>
                 <View style= {styleShow.content}>
-                    <Text style={{color:'black', margin: 10}}>Username: abc@example.com</Text>
+                    {/* <Text style={{color:'black', margin: 10}}>Username: abc@example.com</Text>
                     <Text style={{color:'black', margin: 10}}>SDT: 1231231231</Text>
                     <Text style={{color:'black', margin: 10}}>Username: abc@example.com</Text>
-                    <Text style={{color:'black', margin: 10}}>SDT: 1231231231</Text>
+                    <Text style={{color:'black', margin: 10}}>SDT: 1231231231</Text> */}
+                    <Card>
+                        <CardTitle>
+                            <Text style={{fontWeight: 'bold', fontSize: 25, color:'black'}}> User Name</Text>
+                        </CardTitle>
+                        <CardContent>
+                            <Text>Content 1</Text>
+                            <Text>Content 2</Text>
+                        </CardContent>
+                    </Card>
+
                 </View>
                 <View style={styleShow.footer}>
                     <TouchableOpacity
@@ -53,7 +70,7 @@ var styleShow = StyleSheet.create({
     },
     avatar:{
         height:150,
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
         backgroundColor:'#9E9E9E'
     },
@@ -62,8 +79,6 @@ var styleShow = StyleSheet.create({
         alignItems:'center'
     },
     content:{
-        margin:30,
-        backgroundColor:'white', 
         justifyContent:'center', 
         alignItems:'center'
     },
@@ -80,7 +95,11 @@ var styleShow = StyleSheet.create({
         marginRight: 30,
         marginLeft: 30,
         backgroundColor: 'skyblue',
-        borderRadius: 20,
+        borderRadius: 10,
         alignItems: 'center'
+    },
+    title: {
+        fontSize: 38,
+        backgroundColor: 'transparent'
     },
 })

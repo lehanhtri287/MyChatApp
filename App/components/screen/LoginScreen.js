@@ -6,8 +6,11 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    StyleSheet, Button
+    StyleSheet, Button,
+    Image
 } from 'react-native';
+
+// import * as firebase from 'firebase';
 
 export default class LoginScreen extends Component {
     constructor(props) {
@@ -26,19 +29,21 @@ export default class LoginScreen extends Component {
         return (
             <View style={style.container}>
                 <View style={style.content}>
-                    <View style={style.wrapper}>
+                        <View style={style.banner}>
+                            <Image
+                                source={require('../../assets/images/chat_app.jpg')}
+                                style={style.imageStyle}/>
+                        </View>
                         <View style={style.formInput}>
                             <TextInput
                                 style={style.input}
                                 underlineColorAndroid='transparent'
-                                placeholder='Username'/>
+                                placeholder='Email'/>
                             <TextInput
                                 style={style.input}
                                 secureTextEntry
                                 underlineColorAndroid='transparent'
                                 placeholder='Password'/>
-                        </View>
-                        <View style={style.formInput}>
                             <TouchableOpacity
                                 onPress={()=>{
                                     navigate('userInfo');
@@ -49,19 +54,32 @@ export default class LoginScreen extends Component {
                             <TouchableOpacity
                                 onPress={() => {
                                     navigate('register');
-                                }}>
-                                <Text style={{color:'black', fontSize: 20}}>Not a member? Sign up now.</Text>
+                                }}
+                                style={{alignItems:'center'}}>
+                                <Text style={{color:'#1565C0', fontSize: 15}}>Forgot your password.</Text>
                             </TouchableOpacity>
-                            {/*<Button*/}
-                            {/*title="Not a member? Sign up now."*/}
-                            {/*onPress={() => {*/}
-                            {/*navigate('register');*/}
-                            {/*}}*/}
-                            {/*/>*/}
-
+                        </View>
+                        <View style={style.footer}>
+                            <TouchableOpacity
+                                onPress={()=>{
+                                    navigate('register');
+                                }}
+                                style={{
+                                    margin: 10,
+                                    padding: 10,
+                                    marginRight: 25,
+                                    marginLeft: 25,
+                                    alignItems:'center', 
+                                    borderColor:'#1565C0',
+                                    borderTopWidth:1,
+                                    borderLeftWidth:1,
+                                    borderRightWidth:1,
+                                    borderBottomWidth:1,
+                                    borderRadius:10}}>
+                                <Text style={{color:'#1565C0', fontSize: 20, textAlign:'center'}}>Sign up</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                </View>
             </View>
         )
     }
@@ -85,11 +103,6 @@ var style = StyleSheet.create({
         flex: 1,
         backgroundColor: "white",
         justifyContent: 'center',
-        alignItems: 'center'
-    },
-    wrapper: {
-        flex: 1,
-        justifyContent: 'center'
     },
     textView: {
         fontSize: 20,
@@ -98,21 +111,38 @@ var style = StyleSheet.create({
     },
     input: {
         margin: 5,
-        borderRadius: 20,
-        // caretHidden: true,
-        backgroundColor: '#E0E0E0',
+        marginLeft:25,
+        marginRight:25,
+        borderRadius: 10,
+        borderColor:'grey',
+        borderTopWidth:1,
+        borderLeftWidth:1,
+        borderRightWidth:1,
+        borderBottomWidth:1,
     },
     button: {
         margin: 10,
         padding: 10,
-        marginRight: 30,
-        marginLeft: 30,
-        backgroundColor: 'skyblue',
-        borderRadius: 20,
+        marginRight: 25,
+        marginLeft: 25,
+        backgroundColor: '#1565C0',
+        borderRadius: 10,
         alignItems: 'center'
     },
     formInput: {
-        // flexDirection: 'column',
-        margin: 20,
+        flex: 1,
+    },
+    banner:{
+        flex: 0.6,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    footer:{
+        flex: 1,
+        justifyContent: 'center'
+    },    
+    imageStyle:{
+        width: 100, 
+        height: 100,
     }
 });

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     Text,
-    View
+    View, Button, TouchableOpacity
 } from 'react-native';
 
 import {StackNavigator} from 'react-navigation';
@@ -23,7 +23,6 @@ const appNavigator = StackNavigator({
     register: {
         screen: RegisterScreen,
         navigationOptions: {
-            title: 'Register',
             headerStyle: {
                 backgroundColor: '#6200EE'
             }
@@ -33,9 +32,17 @@ const appNavigator = StackNavigator({
         screen: UserInfoScreen,
         navigationOptions:{
             title: 'Name',
+            headerTitleStyle:{
+                alignSelf: 'center',
+                color: 'white'
+            },
             headerStyle: {
                 backgroundColor: '#6200EE'
-            }
+            },
+            headerRight:
+            <TouchableOpacity>
+                <Text style={{color:'white', fontSize:18, marginRight:10}}>Sign out</Text>
+            </TouchableOpacity>
         }
     }
 })

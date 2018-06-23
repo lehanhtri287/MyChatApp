@@ -15,6 +15,7 @@ export default class RegisterScreen extends Component {
     }
 
     render() {
+        const {navigate} = this.props.navigation;
         return (
             <View style={style.container}>
 
@@ -22,7 +23,7 @@ export default class RegisterScreen extends Component {
                     <TextInput
                         style={style.input}
                         underlineColorAndroid='transparent'
-                        placeholder='Username'/>
+                        placeholder='Email'/>
                     <TextInput
                         style={style.input}
                         underlineColorAndroid='transparent'
@@ -67,8 +68,12 @@ var style = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         alignItems: 'center',
-        backgroundColor: "#E0E0E0",
-        borderRadius: 20,
+        borderRadius: 20, 
+        borderColor:'grey',
+        borderTopWidth:1,
+        borderLeftWidth:1,
+        borderRightWidth:1,
+        borderBottomWidth:1,
     },
     button: {
         margin: 10,
@@ -89,7 +94,6 @@ var style = StyleSheet.create({
         color: "#000000",
         fontSize: 20,
         fontWeight: '400',
-
     },
     formInput: {
         flex: 1,
