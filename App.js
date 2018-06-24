@@ -1,57 +1,57 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
+
 import React, { Component } from 'react'
 import {
+  Platform,
   StyleSheet,
-  Text, Image,
-  View, Button, TouchableOpacity
+  Text,
+  View
 } from 'react-native'
 
-import { StackNavigator, TabNavigator } from 'react-navigation'
-import LoginScreen from "./App/components/screen/LoginScreen"
-import RegisterScreen from "./App/components/screen/RegisterScreen"
-import UserInfoScreen from "./App/components/screen/UserInfoScreen"
-import BasicFlatList from './App/components/screen/BasicFlatList'
-import HomeScreen from './App/components/screen/Home';
+const instructions = Platform.select({
+  ios: 'Press Cmd+R to reload,\n' +
+    'Cmd+D or shake for dev menu',
+  android: 'Double tap R on your keyboard to reload,\n' +
+    'Shake or press menu button for dev menu',
+})
 
-const appNavigator = TabNavigator({
-  home: {
-    screen: HomeScreen,
-    navigationOptions: {
-      title: 'Home',
-      headerStyle: {
-        backgroundColor: '#6200EE'
-      }
-    }
+export default class App extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit App.js
+        </Text>
+        <Text style={styles.instructions}>
+          {instructions}
+        </Text>
+      </View>
+    )
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
   },
-  register: {
-    screen: RegisterScreen,
-    navigationOptions: {
-      headerStyle: {
-        backgroundColor: '#6200EE'
-      }
-    }
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
   },
-  userInfo: {
-    screen: UserInfoScreen,
-    navigationOptions: {
-      title: 'Name',
-      headerTitleStyle: {
-        alignSelf: 'center',
-        color: 'white'
-      },
-      headerStyle: {
-        backgroundColor: '#6200EE'
-      },
-      headerRight:
-        <TouchableOpacity>
-          <Text style={{ color: 'white', fontSize: 18, marginRight: 10 }}>Sign out</Text>
-        </TouchableOpacity>
-    }
-  },
-  list: {
-    screen: BasicFlatList,
-    navigationOptions: {
-      header: null
-    }
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5,
   },
 })
-export default appNavigator
