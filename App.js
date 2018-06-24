@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
 import {
   StyleSheet,
-  Text,
+  Text, Image,
   View, Button, TouchableOpacity
 } from 'react-native'
 
-import { StackNavigator } from 'react-navigation'
+import { StackNavigator, TabNavigator } from 'react-navigation'
 import LoginScreen from "./App/components/screen/LoginScreen"
 import RegisterScreen from "./App/components/screen/RegisterScreen"
 import UserInfoScreen from "./App/components/screen/UserInfoScreen"
 import BasicFlatList from './App/components/screen/BasicFlatList'
+import HomeScreen from './App/components/screen/Home';
 
-const appNavigator = StackNavigator({
-  login: {
-    screen: LoginScreen,
+const appNavigator = TabNavigator({
+  home: {
+    screen: HomeScreen,
     navigationOptions: {
-      title: 'Login',
+      title: 'Home',
       headerStyle: {
         backgroundColor: '#6200EE'
       }
@@ -51,6 +52,6 @@ const appNavigator = StackNavigator({
     navigationOptions: {
       header: null
     }
-  }
+  },
 })
 export default appNavigator

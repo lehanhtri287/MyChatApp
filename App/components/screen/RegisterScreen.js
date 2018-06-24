@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import {
     View,
     StatusBar,
-    Text,
+    Text, Image,
     TextInput,
     TouchableOpacity,
     StyleSheet
@@ -18,30 +18,16 @@ export default class RegisterScreen extends Component {
         const {navigate} = this.props.navigation;
         return (
             <View style={style.container}>
-
+                <View style={style.banner}>
+                    <Image
+                        source={require('../../assets/images/chat_app.jpg')}
+                        style={style.imageStyle} />
+                </View>
                 <View style={style.formInput}>
                     <TextInput
                         style={style.input}
                         underlineColorAndroid='transparent'
                         placeholder='Email'/>
-                    <TextInput
-                        style={style.input}
-                        underlineColorAndroid='transparent'
-                        placeholder='First name'/>
-                    <TextInput
-                        underlineColorAndroid='transparent'
-                        style={style.input}
-                        placeholder='Last name'/>
-                    <TextInput
-                        style={style.input}
-                        secureTextEntry
-                        underlineColorAndroid='transparent'
-                        placeholder='Password'/>
-                    <TextInput
-                        style={style.input}
-                        secureTextEntry
-                        underlineColorAndroid='transparent'
-                        placeholder='Confirm password'/>
                     <TouchableOpacity
                         onPress={this.props.backLogin}
                         style={style.button}>
@@ -59,7 +45,7 @@ var style = StyleSheet.create({
         backgroundColor: "#FFFFFF"
     },
     textView: {
-        fontSize: 20,
+        fontSize: 15,
         textAlign: 'center',
         color: "#FFFFFF"
     },
@@ -68,7 +54,7 @@ var style = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         alignItems: 'center',
-        borderRadius: 20, 
+        borderRadius: 10, 
         borderColor:'grey',
         borderTopWidth:1,
         borderLeftWidth:1,
@@ -80,8 +66,8 @@ var style = StyleSheet.create({
         padding: 10,
         marginLeft: 90,
         marginRight: 90,
-        backgroundColor: 'skyblue',
-        borderRadius: 20,
+        backgroundColor: '#1565C0',
+        borderRadius: 10,
         alignItems: 'center'
     },
     header: {
@@ -98,6 +84,14 @@ var style = StyleSheet.create({
     formInput: {
         flex: 1,
         backgroundColor: "white",
-        justifyContent: 'center'
+    },
+    banner: {
+        flex: 0.6,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    imageStyle: {
+        width: 100,
+        height: 100,
     }
 });
